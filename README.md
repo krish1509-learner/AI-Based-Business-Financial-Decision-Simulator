@@ -14,7 +14,7 @@ FinSim AI is an interactive business-finance simulator built with React, Vite, R
    ```bash
    npm install
    ```
-2. Copy `.env.example` to `.env` and set your `GEMINI_API_KEY`:
+2. Copy `.env.example` to `.env` and set your `GEMINI_API_KEY` from Google AI Studio. Keep this key private; it is only read by the server API route:
    ```bash
    cp .env.example .env
    ```
@@ -22,3 +22,10 @@ FinSim AI is an interactive business-finance simulator built with React, Vite, R
    ```bash
    npm run dev
    ```
+
+## Deploy to Vercel
+1. Import this project in Vercel, or run `vercel` from this directory and follow the prompts.
+2. In the Vercel project settings, add `GEMINI_API_KEY` under **Environment Variables** for Production (and Preview if needed). Do not add a `VITE_` prefix.
+3. Deploy with `vercel --prod`, or push to the Git provider connected to the Vercel project for automatic deployments.
+
+Vercel builds the Vite app and deploys `api/gemini.js` as the server-side `/api/gemini` function. After changing environment variables, redeploy for them to take effect.
